@@ -1,7 +1,0 @@
-{
-    "$schema": {
-        "name":"tiger",
-        "age":34,
-        "living":"forest"
-    }
-}
