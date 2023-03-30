@@ -32,15 +32,10 @@ const User = sequelize2.define('hide', {
     },
     City :{
         type:Sequelize.STRING,
-        allowNull:false
-    }
-})
+        allowNull:false}})
 User.sync()
 app.use(express.json())
-
-
 async function  testing() {
-    
     const gettingdata= await sequelize1.query('SELECT * FROM Persons',{type:Sequelize.QueryTypes.SELECT})
      await User.sync({ force: true });
      const jane = await User.bulkCreate(gettingdata);
@@ -48,13 +43,8 @@ async function  testing() {
      const diod=conn1.collection('test').insertMany([...gettingdata1])
 }
 app.get('/', (req, res) => {
-    
      testing()
-        res.send("{getting}");
-})
-
-
+        res.send("{getting}");})
 const PORT = process.env.PORT || 4444;
   app.listen(PORT, () => {
-    console.log("port is running");
-  })
+    console.log("port is running");})
